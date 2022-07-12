@@ -1,0 +1,38 @@
+  /* jus add this to a public Class */
+  
+  public void fibonacci(){
+        int limite =0, num1 = 0, num2 = 1, suma = 0;
+        String fibonacci = "";
+        boolean primeraVez = true;
+        do {
+            if (!primeraVez) {
+                JOptionPane.showMessageDialog(null, "Intente de nuevo, recuerde que el rango permitido "
+                        + "es entre 5 y 30, ha digitado un valor fuera del rango");
+            }
+            primeraVez =false;
+            limite = Integer.parseInt(JOptionPane.showInputDialog("Digite el limite del fibonacci, el valor debe estar"
+                    + "entre 5 y 30:"));
+            
+        } while (limite<5 || limite > 30);
+        
+        /*Se generen n cantidad de numeros del fibonacci*/
+        for (int i = 0; i < limite; i++) {
+            fibonacci+= suma +" ";
+            suma = num1 + num2;
+            num1 = num2;
+            num2 = suma;
+        }
+        JOptionPane.showMessageDialog(null, "El fibonacci con "+limite+" numeros es: \n"+fibonacci);
+        
+        /*Pone como limite el valor indicado*/
+        num1 = 0;
+        num2 = 1; 
+        suma = 0;
+        fibonacci ="";
+        do {
+            fibonacci+= suma +" ";
+            suma = num1 + num2;
+            num1 = num2;
+            num2 = suma;
+        } while (suma<=limite);
+        JOptionPane.showMessageDialog(null, "El fibonacci con "+limite+" es: \n"+fibonacci);
